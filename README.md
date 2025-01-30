@@ -229,6 +229,52 @@ Password:
 FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 ```
 ```bash
+ssh -i sshkey.private -p 2220 bandit14@localhost
+cat /etc/bandit_pass/bandit14
+```
+**Password: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS**
+
+## Level 14:
+CMD:
+```bash
+ssh bandit14@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+```
+```bash
+echo "MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS" | nc localhost 30000
+```
+**Password: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo**
+
+## Level 15:
+CMD:
+```bash
+ssh bandit15@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+```
+```bash
+openssl s_client -connect localhost:30001
+```
+```bash
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+```
+**Password: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx**
+
+## Level 16:
+CMD:
+```bash
+ssh bandit16@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+```
+```bash
 
 ```
 **Password: **
