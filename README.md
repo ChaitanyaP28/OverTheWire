@@ -16,9 +16,7 @@ ls
 cat readme
 ```
 **Password:**
-```
-ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
-```
+***ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If***
 
 ## Level 2:
 ```bash
@@ -35,7 +33,7 @@ cat ./-
 
 **Password:**
 
-**263JGJPfgU6LtdEvgfWU1XP5yac29mFx**
+***263JGJPfgU6LtdEvgfWU1XP5yac29mFx***
 
 
 
