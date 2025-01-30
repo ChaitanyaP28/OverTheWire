@@ -197,6 +197,38 @@ Password:
 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 ```
 ```bash
-cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+mkdir /tmp/tmp1000099
+cd /tmp/tmp1000099
+cp ~/data.txt .
+mv data.txt hexdump_data
+xxd -r hexdump_data compressed_data
+mv compressed_data compressed_data.gz
+gzip -d compressed_data.gz
+mv compressed_data compressed_data.bz2
+bzip2 -d compressed_data.bz2
+mv compressed_data compressed_data.gz
+gzip -d compressed_data.gz
+mv compressed_data compressed_data.tar
+tar -xf compressed_data.tar
+tar -xf data5.bin
+bzip2 -d data6.bin
+tar -xf data6.bin.out
+mv data8.bin data8.gz
+gzip -d data8.gz
+cat data8
 ```
-**Password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4**
+**Password: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn**
+
+## Level 13:
+CMD:
+```bash
+ssh bandit13@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+```
+```bash
+
+```
+**Password: **
