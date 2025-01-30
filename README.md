@@ -15,14 +15,27 @@ bandit0
 ls
 cat readme
 ```
-Password:
+**Password:**
 ```
 ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ```
 
 ## Level 2:
 ```bash
-cd /home
+ssh bandit1@bandit.labs.overthewire.org -p 2220
 ```
+Password: 
+```bash
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+```
+
+```bash
+cat ./-
+```
+
+**Password:**
+
+**263JGJPfgU6LtdEvgfWU1XP5yac29mFx**
+
 
 
