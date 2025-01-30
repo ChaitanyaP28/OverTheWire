@@ -13,17 +13,15 @@ bandit0
 ## Level 1:
 ```bash
 ls
-```
-```bash
 cat readme
 ```
 Password:
-```bash
+```
 ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ```
 
 ## Level 2:
-```
+```bash
 cd /home
 ```
 
