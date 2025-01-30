@@ -1,5 +1,7 @@
 # OverTheWire
 # Bandit
+
+
 ## Level 0:
 CMD: 
 ```bash
@@ -10,6 +12,7 @@ Password:
 bandit0
 ```
 
+
 ## Level 1:
 ```bash
 ls
@@ -18,6 +21,7 @@ cat readme
 **Password:**
 
 **ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If**
+
 
 ## Level 2:
 ```bash
@@ -35,6 +39,9 @@ cat ./-
 **Password:**
 
 **263JGJPfgU6LtdEvgfWU1XP5yac29mFx**
+
+
+## Level 3:
 
 
 
