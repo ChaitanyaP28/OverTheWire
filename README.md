@@ -23,5 +23,8 @@ ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ```
 
 ## Level 2:
+```
+cd /home
+```
 
 
