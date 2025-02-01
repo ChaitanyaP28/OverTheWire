@@ -556,3 +556,280 @@ nc localhost 30002
 gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 9297
 ```
 **Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4**
+
+## Level 25:
+CMD:
+```bash
+ssh bandit25@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+```
+Solution:
+```bash
+ls
+cat bandit26.sshkey
+```
+Save Password in Key26.txt
+```
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApis2AuoooEqeYWamtwX2k5z9uU1Afl2F8VyXQqbv/LTrIwdW
+pTfaeRHXzr0Y0a5Oe3GB/+W2+PReif+bPZlzTY1XFwpk+DiHk1kmL0moEW8HJuT9
+/5XbnpjSzn0eEAfFax2OcopjrzVqdBJQerkj0puv3UXY07AskgkyD5XepwGAlJOG
+xZsMq1oZqQ0W29aBtfykuGie2bxroRjuAPrYM4o3MMmtlNE5fC4G9Ihq0eq73MDi
+1ze6d2jIGce873qxn308BA2qhRPJNEbnPev5gI+5tU+UxebW8KLbk0EhoXB953Ix
+3lgOIrT9Y6skRjsMSFmC6WN/O7ovu8QzGqxdywIDAQABAoIBAAaXoETtVT9GtpHW
+qLaKHgYtLEO1tOFOhInWyolyZgL4inuRRva3CIvVEWK6TcnDyIlNL4MfcerehwGi
+il4fQFvLR7E6UFcopvhJiSJHIcvPQ9FfNFR3dYcNOQ/IFvE73bEqMwSISPwiel6w
+e1DjF3C7jHaS1s9PJfWFN982aublL/yLbJP+ou3ifdljS7QzjWZA8NRiMwmBGPIh
+Yq8weR3jIVQl3ndEYxO7Cr/wXXebZwlP6CPZb67rBy0jg+366mxQbDZIwZYEaUME
+zY5izFclr/kKj4s7NTRkC76Yx+rTNP5+BX+JT+rgz5aoQq8ghMw43NYwxjXym/MX
+c8X8g0ECgYEA1crBUAR1gSkM+5mGjjoFLJKrFP+IhUHFh25qGI4Dcxxh1f3M53le
+wF1rkp5SJnHRFm9IW3gM1JoF0PQxI5aXHRGHphwPeKnsQ/xQBRWCeYpqTme9amJV
+tD3aDHkpIhYxkNxqol5gDCAt6tdFSxqPaNfdfsfaAOXiKGrQESUjIBcCgYEAxvmI
+2ROJsBXaiM4Iyg9hUpjZIn8TW2UlH76pojFG6/KBd1NcnW3fu0ZUU790wAu7QbbU
+i7pieeqCqSYcZsmkhnOvbdx54A6NNCR2btc+si6pDOe1jdsGdXISDRHFb9QxjZCj
+6xzWMNvb5n1yUb9w9nfN1PZzATfUsOV+Fy8CbG0CgYEAifkTLwfhqZyLk2huTSWm
+pzB0ltWfDpj22MNqVzR3h3d+sHLeJVjPzIe9396rF8KGdNsWsGlWpnJMZKDjgZsz
+JQBmMc6UMYRARVP1dIKANN4eY0FSHfEebHcqXLho0mXOUTXe37DWfZza5V9Oify3
+JquBd8uUptW1Ue41H4t/ErsCgYEArc5FYtF1QXIlfcDz3oUGz16itUZpgzlb71nd
+1cbTm8EupCwWR5I1j+IEQU+JTUQyI1nwWcnKwZI+5kBbKNJUu/mLsRyY/UXYxEZh
+ibrNklm94373kV1US/0DlZUDcQba7jz9Yp/C3dT/RlwoIw5mP3UxQCizFspNKOSe
+euPeaxUCgYEAntklXwBbokgdDup/u/3ms5Lb/bm22zDOCg2HrlWQCqKEkWkAO6R5
+/Wwyqhp/wTl8VXjxWo+W+DmewGdPHGQQ5fFdqgpuQpGUq24YZS8m66v5ANBwd76t
+IZdtF5HXs2S5CADTwniUS5mX1HO9l5gUkk+h0cH5JnPtsMCnAUM+BRY=
+-----END RSA PRIVATE KEY-----
+```
+Make your **Terminal size SMALL**
+```bash
+ssh -i Key26.txt bandit26@bandit.labs.overthewire.org -p 2220
+```
+Once More Appears press v
+```bash
+v
+```
+```bash
+:e /etc/bandit_pass/bandit26
+```
+**Password: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ**
+
+
+## Level 26:
+CMD:
+```bash
+ssh bandit26@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+```
+Solution:
+
+Make your **Terminal size SMALL**
+
+Once More Appears press v
+```bash
+v
+```
+```bash
+:e /etc/bandit_pass/bandit26
+```
+```bash
+:set shell=/bin/bash
+```
+```bash
+:shell
+```
+```bash
+ls
+./bandit27-do cat /etc/bandit_pass/bandit27
+```
+**Password: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB**
+
+## Level 27:
+CMD:
+```bash
+ssh bandit27@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+```
+Solution:
+```bash
+mkdir /tmp/mydir3
+cd /tmp/mydir3
+git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
+```
+```bash
+upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+```
+```bash
+ls
+cat README
+```
+**Password: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN**
+
+## Level 28:
+CMD:
+```bash
+ssh bandit28@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
+```
+Solution:
+```bash
+mkdir /tmp/mydir4
+cd /tmp/mydir4
+git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo
+```
+```bash
+Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
+```
+```bash
+ls
+cd repo
+ls
+cat README.md
+git log
+git show
+```
+**Password: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7**
+
+## Level 29:
+CMD:
+```bash
+ssh bandit29@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
+```
+Solution:
+```bash
+mkdir /tmp/mydir5
+cd /tmp/mydir5
+git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo
+```
+```bash
+4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
+```
+```bash
+ls
+cd repo
+ls
+cat README.md
+git branch -a
+git checkout remotes/origin/dev
+ls
+cat README.md
+```
+**Password: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL**
+
+## Level 30:
+CMD:
+```bash
+ssh bandit30@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
+```
+Solution:
+```bash
+mkdir /tmp/mydir6
+cd /tmp/mydir6
+git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo
+```
+```bash
+qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
+```
+```bash
+ls
+cd repo
+ls
+cat README.md
+git tag
+git show secret
+```
+**Password: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy**
+
+## Level 31:
+CMD:
+```bash
+ssh bandit31@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+```
+Solution:
+```bash
+mkdir /tmp/mydir7
+cd /tmp/mydir7
+git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo
+```
+```bash
+fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+```
+```bash
+ls
+cd repo
+ls
+cat README.md
+echo 'May I come in?' > key.txt
+git add -f key.txt
+git commit -m "Add key.txt"
+git push origin master
+```
+```
+fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
+```
+**Password: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K**
+
+## Level 32:
+CMD:
+```bash
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
+```
+Solution:
+```bash
+$0
+```
+```bash
+cat /etc/bandit_pass/bandit33
+```
+**Password: tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0**
+
+## Level 33:
+CMD:
+```bash
+ssh bandit33@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
+```
+Solution:
+```bash
+```
+**Password:**
+
+```bash
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+bandit33@bandit:~$
+```
