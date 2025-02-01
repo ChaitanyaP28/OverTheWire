@@ -45,6 +45,7 @@ Password:
 ```bash
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 ```
+Solution:
 ```bash
 cat "spaces in this filename"
 ```
@@ -59,6 +60,7 @@ Password:
 ```bash
 MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 ```
+Solution:
 ```bash
 cd inhere
 ls -la
@@ -75,6 +77,7 @@ Password:
 ```bash
 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 ```
+Solution:
 ```bash
 ls
 cd inhere
@@ -93,6 +96,7 @@ Password:
 ```bash
 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 ```
+Solution:
 ```bash
 ls
 cd inhere
@@ -111,6 +115,7 @@ Password:
 ```bash
 HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 ```
+Solution:
 ```bash
 find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
 cat /var/lib/dpkg/info/bandit7.password
@@ -126,6 +131,7 @@ Password:
 ```bash
 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 ```
+Solution:
 ```bash
 cat data.txt | grep "millionth"
 ```
@@ -140,6 +146,7 @@ Password:
 ```bash
 dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 ```
+Solution:
 ```bash
 sort data.txt | uniq -u
 ```
@@ -154,6 +161,7 @@ Password:
 ```bash
 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 ```
+Solution:
 ```bash
 strings data.txt | grep "=.*"
 ```
@@ -168,6 +176,7 @@ Password:
 ```bash
 FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 ```
+Solution:
 ```bash
 base64 -d data.txt
 ```
@@ -182,6 +191,7 @@ Password:
 ```bash
 dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 ```
+Solution:
 ```bash
 cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
@@ -196,6 +206,7 @@ Password:
 ```bash
 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 ```
+Solution:
 ```bash
 mkdir /tmp/tmp1000099
 cd /tmp/tmp1000099
@@ -228,6 +239,7 @@ Password:
 ```bash
 FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 ```
+Solution:
 ```bash
 ssh -i sshkey.private -p 2220 bandit14@localhost
 cat /etc/bandit_pass/bandit14
@@ -243,6 +255,7 @@ Password:
 ```bash
 MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 ```
+Solution:
 ```bash
 echo "MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS" | nc localhost 30000
 ```
@@ -257,6 +270,7 @@ Password:
 ```bash
 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 ```
+Solution:
 ```bash
 openssl s_client -connect localhost:30001
 ```
@@ -274,6 +288,7 @@ Password:
 ```bash
 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 ```
+Solution:
 ```bash
 echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -quiet -connect localhost:31790
 ```
@@ -346,8 +361,8 @@ dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 ```
-
+Solution:
 ```bash
-echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -quiet -connect localhost:31790
+
 ```
 **Password:**
