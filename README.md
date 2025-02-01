@@ -2,7 +2,10 @@
 ```
 https://overthewire.org/wargames/
 ```
+
 ### USE THIS ONLY IF YOUR REALLY STUCK AND TIRED OF FINDING THE PASSWORD AND HAVE NO OTHER WAY.
+
+## THIS IS THE LAST OPTION.
 
 # Bandit
 ## Level 0:
@@ -833,3 +836,6 @@ In the meantime, you could play some of our other wargames.
 If you have an idea for an awesome new level, please let us know!
 bandit33@bandit:~$
 ```
+
+# Natas
+## Level 0:
