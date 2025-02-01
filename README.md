@@ -841,3 +841,20 @@ bandit33@bandit:~$
 
 # Natas
 ## Level 0:
+Website:
+```bash
+http://natas0.natas.labs.overthewire.org
+```
+Username:
+```bash
+natas0
+```
+Passowrd:
+```bash
+natas0
+```
+Solution:
+```bash
+```
+**Password: **
+
