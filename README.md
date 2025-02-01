@@ -363,6 +363,93 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 ```
 Solution:
 ```bash
+diff passwords.old passwords.new
+```
+**Password: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO**
+
+## Level 18:
+CMD:
+```bash
+ssh bandit18@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+```
+Solution:
+```bash
+ssh bandit18@bandit.labs.overthewire.org -p 2220 ls
+```
+```bash
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+```
+**Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8**
+
+## Level 19:
+CMD:
+```bash
+ssh bandit19@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+```
+Solution:
+```bash
+./bandit20-do cat /etc/bandit_pass/bandit20
+```
+**Password: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO**
+
+## Level 20:
+CMD:
+```bash
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+```
+Solution:
+
+Terminal1:
+```bash
+nc -lvnp 12345
+```
+Terminal2:
+```bash
+./suconnect 12345
+```
+**Password: EeoULMCra2q0dSkYj561DX7s1CpBuOBt**
+
+## Level 21:
+CMD:
+```bash
+ssh bandit21@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+```
+Solution:
+```bash
+ls -l /etc/cron.d/
+cat /etc/cron.d/cronjob_bandit22
+cat /usr/bin/cronjob_bandit22.sh
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+```
+**Password: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q**
+
+## Level 22:
+CMD:
+```bash
+ssh bandit22@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+```
+Solution:
+```bash
 
 ```
-**Password:**
+**Password: **
