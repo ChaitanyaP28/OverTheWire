@@ -422,6 +422,10 @@ Terminal2:
 ```bash
 ./suconnect 12345
 ```
+Terminal1:
+```bash
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+```
 **Password: EeoULMCra2q0dSkYj561DX7s1CpBuOBt**
 
 ## Level 21:
