@@ -1082,7 +1082,7 @@ echo "S1JZUFRPTklTR1JFQVQ=" | base64 --decode
 ## Level 1
 CMD:
 ```bash
-ssh krypton1@krypton.labs.overthewire.org -p 2222
+ssh krypton1@krypton.labs.overthewire.org -p 2231
 ```
 Passowrd:
 ```bash
@@ -1107,33 +1107,89 @@ Output:
 LEVEL TWO PASSWORD ROTTEN
 ```
 **Password: ROTTEN**
-
 
 ## Level 2
 CMD:
 ```bash
-ssh krypton2@krypton.labs.overthewire.org -p 2222
+ssh krypton2@krypton.labs.overthewire.org -p 2231
 ```
 Passowrd:
 ```bash
-KRYPTONISGREAT
+ROTTEN
 ```
 Solution:
 ```bash
-cd /krypton/krypton1
+cd /krypton/krypton2
 ls
+./encrypt
 cat README
-cat krypton2
+cat krypton3
 ```
+Output `OMQEMDUEQMEK`
+```bash
+temp_dir=$(mktemp -d)
+cd $temp_dir
+ln -s /krypton/krypton2/keyfile.dat keyfile.dat
+chmod 777 .
+echo "A" | /krypton/krypton2/encrypt
+/krypton/krypton2/encrypt plaintext.txt
+cat ciphertext
+echo "ABCDEFGHIJKLMNOPQRSTUVWXYZ" > plaintext.txt
+/krypton/krypton2/encrypt plaintext.txt
+cat ciphertext
+```
+Now We know it is Ceaser Cipher shifted 12 times
+
 Run the Python code.
 ```python3
-import codecs
-ciphertext = "YRIRY GJB CNFFJBEQ EBGGRA"
-plaintext = codecs.decode(ciphertext, 'rot_13')
-print(plaintext)
+def caesar_decrypt(ciphertext, shift):
+    decrypted = ""
+    for char in ciphertext:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            decrypted += chr((ord(char) - base - shift) % 26 + base)
+        else:
+            decrypted += char
+    return decrypted
+
+ciphertext = "OMQEMDUEQMEK"
+shift = 12
+
+print(caesar_decrypt(ciphertext, shift))
 ```
 Output:
 ```bash
-LEVEL TWO PASSWORD ROTTEN
+CAESARISEASY
 ```
-**Password: ROTTEN**
+**Password: CAESARISEASY**
+
+## Level 3
+CMD:
+```bash
+ssh krypton3@krypton.labs.overthewire.org -p 2231
+```
+Passowrd:
+```bash
+CAESARISEASY
+```
+Solution:
+```bash
+cd /krypton/krypton3
+ls
+cat found1
+cat found2
+cat found3
+cat HINT1
+cat HINT2
+cat krypton4
+cat README
+```
+```python3
+
+```
+
+Output:
+```bash
+
+```
+**Password: **
