@@ -956,8 +956,6 @@ f0n8h2iWLP
 Solution:
 ```bash
 ls -la
-```
-```bash
 ltrace ./level3
 ```
 Enter Something and in the next line you can see,
@@ -971,8 +969,106 @@ snlprintf
 ```
 ```bash
 whoami
-```
-```bash
 cat /etc/leviathan_pass/leviathan4
 ```
 **Password: WG1egElCvO**
+
+## Level 4:
+CMD:
+```bash
+ssh leviathan4@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+WG1egElCvO
+```
+Solution:
+```bash
+ls -la
+cd .trash
+ls
+./bin
+```
+Convert Binary to Chr using Python
+```bash
+echo "00110000 01100100 01111001 01111000 01010100 00110111 01000110 00110100 01010001 01000100 00001010" | python3 -c 'import sys; print("".join([chr(int(x,2)) for x in sys.stdin.read().split()]))'
+```
+**Password: 0dyxT7F4QD**
+
+## Level 5:
+CMD:
+```bash
+ssh leviathan5@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+0dyxT7F4QD
+```
+Solution:
+```bash
+ls -la
+./leviathan5
+ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+```
+**Password: szo7HDB88w**
+
+## Level 6:
+CMD:
+```bash
+ssh leviathan6@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+szo7HDB88w
+```
+Solution:
+```bash
+ls -la
+./leviathan6
+./leviathan6 0000
+mkdir /tmp/tmp12345
+cd /tmp/tmp12345
+nano bruteforce.sh
+```
+Bruteforcing script
+```bash
+#!/bin/bash
+cd /home/leviathan6
+for i in $(seq -w 0000 9999); do
+    echo "Trying code: $i"
+    ./leviathan6 $i | grep -q "Wrong" || { echo "Correct code: $i"; break; }
+done
+```
+```bash
+chmod +x bruteforce.sh
+./bruteforce.sh
+cd ~
+./leviathan6 7123
+```
+```bash
+whoami
+cat /etc/leviathan_pass/leviathan7
+```
+**Password: qEs5Io5yM8**
+
+## Level 7:
+CMD:
+```bash
+ssh leviathan7@leviathan.labs.overthewire.org -p 2223
+```
+Passowrd:
+```bash
+qEs5Io5yM8
+```
+Solution:
+```bash
+ls
+cat CONGRATULATIONS
+```
+**Password:**
+```bash 
+Well Done, you seem to have used a *nix system before, now try something more serious.
+(Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)
+```
+
+# Bandit
