@@ -955,6 +955,24 @@ f0n8h2iWLP
 ```
 Solution:
 ```bash
-
+ls -la
 ```
-**Password: **
+```bash
+ltrace ./level3
+```
+Enter Something and in the next line you can see,
+strcmp("\n", "snlprintf\n")
+
+```bash
+snlprintf
+```
+```bash
+/bin/bash -p
+```
+```bash
+whoami
+```
+```bash
+cat /etc/leviathan_pass/leviathan4
+```
+**Password: WG1egElCvO**
