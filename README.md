@@ -961,7 +961,7 @@ ls -la
 ltrace ./level3
 ```
 Enter Something and in the next line you can see,
-strcmp("\n", "snlprintf\n")
+`strcmp("\n", "snlprintf\n")`
 
 ```bash
 snlprintf
