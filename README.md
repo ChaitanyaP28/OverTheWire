@@ -1071,4 +1071,69 @@ Well Done, you seem to have used a *nix system before, now try something more se
 (Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)
 ```
 
-# Bandit
+# Krypton
+## Level 0
+Solution:
+```bash
+echo "S1JZUFRPTklTR1JFQVQ=" | base64 --decode
+```
+**Password: KRYPTONISGREAT**
+
+## Level 1
+CMD:
+```bash
+ssh krypton1@krypton.labs.overthewire.org -p 2222
+```
+Passowrd:
+```bash
+KRYPTONISGREAT
+```
+Solution:
+```bash
+cd /krypton/krypton1
+ls
+cat README
+cat krypton2
+```
+Run the Python code.
+```python3
+import codecs
+ciphertext = "YRIRY GJB CNFFJBEQ EBGGRA"
+plaintext = codecs.decode(ciphertext, 'rot_13')
+print(plaintext)
+```
+Output:
+```bash
+LEVEL TWO PASSWORD ROTTEN
+```
+**Password: ROTTEN**
+
+
+## Level 2
+CMD:
+```bash
+ssh krypton2@krypton.labs.overthewire.org -p 2222
+```
+Passowrd:
+```bash
+KRYPTONISGREAT
+```
+Solution:
+```bash
+cd /krypton/krypton1
+ls
+cat README
+cat krypton2
+```
+Run the Python code.
+```python3
+import codecs
+ciphertext = "YRIRY GJB CNFFJBEQ EBGGRA"
+plaintext = codecs.decode(ciphertext, 'rot_13')
+print(plaintext)
+```
+Output:
+```bash
+LEVEL TWO PASSWORD ROTTEN
+```
+**Password: ROTTEN**
