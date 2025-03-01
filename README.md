@@ -1310,3 +1310,26 @@ Output:
 5agRAXeBdG
 ```
 **Password: 5agRAXeBdG**
+
+## Level 2
+CMD:
+```bash
+ssh narnia2@narnia.labs.overthewire.org -p 2226
+```
+Passowrd:
+```bash
+5agRAXeBdG
+```
+Solution:
+```bash
+cd /narnia
+ls
+./narnia2
+cat narnia2.c
+```
+
+Output:
+```bash
+
+```
+**Password: **
