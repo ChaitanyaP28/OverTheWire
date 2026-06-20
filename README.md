@@ -1354,6 +1354,10 @@ maze0
 ```
 Solution:
 ```bash
+cd /maze
+```
+
+```bash
 strace ./maze0
 ```
 
@@ -1431,6 +1435,7 @@ kfL7RRfpkY
 ```
 Solution:
 ```bash
+cd /maze
 ```
 
 **Password: **
